@@ -24,6 +24,12 @@ export class ContactDetailsComponent implements OnInit{
     this.contact$ = this.activatedRoute.paramMap.pipe(
       switchMap((params: ParamMap) => this.contactService.getContactDetails(params.get('cellNumber')!)));
 
+    /*   this.age$ = this.route.paramMap.pipe(
+        switchMap(params => {
+          this.selectedId = parseInt(params.get('id')!, 10);
+          return this.contactService.predictAge(selectedId);
+        })
+      ); */
 
       this.contact$.subscribe((response: Contacts) => {
 
