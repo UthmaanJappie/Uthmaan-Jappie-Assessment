@@ -1,0 +1,64 @@
+<!-- <div *ngIf="contact$ | async as contact" class="container" style="margin-top: 100px;float: left;">
+  <div class="row">
+    <div class="shadow p-3 mb-5 bg-body" style="font-weight: 800px;width: 500px;margin-top: 55px;">
+      <div class="row " style="margin-top: 15px;padding-left: 15px;float: left;">
+        <div class="col">
+            <h4 style="color:gray">{{contact.firstName}} {{contact.lastName}}</h4>
+        </div>
+      </div>
+      <div class="row"  style="margin-top: 20px;padding-left: 25px;margin-bottom: 25px;">
+        <div class="col">
+          <h6 style="color: lightgray;">Cellphone:</h6>
+          <h6 style="color: lightslategray;font-size: 15px;">{{contact.cellNumber}} </h6>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="row" style="margin-top: 25px;">
+    <h2  style="color: gray;">Contact Bio</h2>
+  </div>
+  <div class="row" style="margin-top: 15px;">
+    <p style="color: gray;">bleh bleh bleh</p>
+  </div>
+</div> -->
+
+<div *ngIf="contact$ | async as contact" class="container" style="margin-top: 100px;float: left;width: 600px;position: relative;">
+  <div class="shadow p-3 mb-5 bg-body">
+    <div class="row" style="margin-top: 15px;padding-right: 100px;font-weight:500">
+      <div class="col-sm-5"> <h2 style="color:darkslategray;font-size: 22px;">
+        {{contact.firstName}} {{contact.lastName}}</h2>
+      </div>
+    </div>
+    <div class="row" style="margin-top: 0px;padding-right: 25px;">
+      <div class="col-sm-4">
+        <h6 style="color: lightgray;font-size: 13px;padding-right: 25px;">Cellphone:</h6>
+        <h6 style="color: lightslategray;font-size: 14px;padding-left: 0px;">{{contact.cellNumber}} </h6>
+      </div>
+      <div class="col-sm-6">
+        <h6 style="color: lightgray;font-size: 13px">Address:</h6>
+        <h6 style="color: lightslategray;font-size: 14px;padding-left: 35px;">{{contact.address}} </h6>
+      </div>
+    </div>
+    <div class="row" style="margin-top: 10px;margin-bottom: 25px;">
+      <div class="col-sm-4">
+        <h6 style="color: lightgray;font-size: 13px;padding-right: 55px">Email:</h6>
+        <h6 style="color: lightslategray;font-size: 14px;padding-left: 20px;">{{contact.email}} </h6>
+      </div>
+      <div class="col-sm-6">
+        <h6 style="color: lightgray;font-size: 13px;padding-right: 49px;">Agify:</h6>
+        <h6 style="color: lightslategray;font-size: 14px;padding-right: 60px;">{{predictedAge}} </h6>
+      </div>
+    </div>
+  </div>
+  <div class="row" style="margin-top: 50px;width: 650px;">
+    <div class="container-fluid">
+      <h33  style="color: gray;font-weight:500;float: left;font-size: 25px;padding-right: 510px;width: 650px;">Contact Bio</h33>
+    </div>
+    <div style="color: lightslategray;font-size: 13px;margin-top: 10px;">
+      <h6 style="color: lightslategray;font-size: 13px;margin-top: 20px;">{{contact.bio}}</h6>
+    </div>
+  </div>
+</div>
+
+

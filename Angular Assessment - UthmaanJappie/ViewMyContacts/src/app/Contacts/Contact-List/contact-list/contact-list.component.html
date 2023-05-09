@@ -1,0 +1,65 @@
+<!-- <div class="container">
+  <div class="row">
+    <h5 style="color: black;margin-top: 5px;font-size: 15px;">CONTACTS</h5>
+  </div>
+
+  <div id="ContactList" class="row" style="margin-top: 5px;">
+    <div class="col-6 col-sm-3" style="margin-top: 10px;">
+      <div class="circle">UJ</div>
+    </div>
+    <div class="col-sm-6" style="margin-top: 10px;">
+      <div class="d-flex flex-column bd-highlight mb-3">
+      <div class="p-1 bd-highlight" style="font-size: 13px;font-weight: 600;">Bob George</div>
+        <div class="p-1 bd-highlight" style="font-size: 10px;">0123456789</div>
+    </div>
+  </div>
+  </div>
+</div> -->
+
+<div class=" text-center" >
+  <div class="row align-items-start">
+    <div class="col">
+      <section class="vh-100" style="background-color: whitesmoke;width: 350px;">
+        <div class="container py-5 h-100" style="padding-left: 6vmax;">
+          <div class="row" style="margin-top: 50px;font-size: 12px;">
+            <div class="d-flex" role="search" >
+              <app-search-component (searchTextChanged)="onSearchTextEntered($event)"></app-search-component>
+              <button class="btn btn-primary" (click)="openDialog()">Add</button>
+            </div>
+          </div>
+          <div class="row">
+            <h5 style="color: lightgrey;margin-top: 35px;font-size: 15px;padding-right: 150px;">CONTACTS</h5>
+          </div>
+          <!--Add ng for loop on this div-->
+          <ng-container *ngFor="let contact of Contacts" [class.selected]="contact.cellNumber === selectedId">
+            <div *ngIf="searchText === '' || contact.firstName.toLowerCase().includes(searchText.toLowerCase()) ||
+                         contact.lastName.toLowerCase().includes(searchText.toLowerCase()) ||
+                         contact.firstName.toLowerCase().includes(searchText.toLowerCase()) && contact.lastName.toLowerCase().includes(searchText.toLowerCase()) ||contact.cellNumber.toLowerCase().includes(searchText)"
+                         id="ContactList" class="row rounded d-flex  align-items-center h-5" style="padding-left: 2px;margin-top: 10px;width: 250px;height: fit-content;">
+              <div class="col col-md-9"  style="height: 60px;width: 180px;">
+                 <a  routerLink="ContactDetail/{{contact.cellNumber}}"  style="text-decoration:none" >
+                 <div class="d-flex text-black" style="width: auto;">
+                   <div class="flex-shrink-0">
+                     <div class="circle" style="margin-top: 2px;">{{contact.firstName.charAt(0) | uppercase}}{{contact.lastName.charAt(0) | uppercase}}</div>
+                   </div>
+                   <div class="flex-grow-1 ms-3" >
+                    <div class="container-fluid">
+                      <div class="row">
+                        <h6 class="mb-0" style="text-align: left;font-size: 14px;margin-top: 8px;color:gray;">{{contact.firstName}} {{contact.lastName}}</h6>
+                        <p class="mb-2 pb-1" style="text-align: left;color: #2b2a2a;font-size: 11px;margin-top: 5px;width: 300px;">{{contact.cellNumber}}</p>
+                      </div>
+                    </div>
+                   </div>
+                 </div>
+                  </a>
+             </div>
+           </div>
+          </ng-container>
+        </div>
+      </section>
+    </div>
+    <div class="col" style="padding-right: 500px;">
+        <router-outlet></router-outlet>
+    </div>
+  </div>
+</div>
